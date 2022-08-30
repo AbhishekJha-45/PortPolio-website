@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Project_1</title>
+</head>
+
+<body>
+    <div id="imageGallery">
+        <div id="previous"><<<</div>
+                <img id="image"
+                    src="https://user-images.githubusercontent.com/88884421/187486180-253789ae-0d35-48f6-9133-cfdf35f90d79.jpg"
+                    class="image-render" alt="Image" />
+                <div id="next">>>></div>
+        </div>
+
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+
+                var images = [
+                    "https://user-images.githubusercontent.com/88884421/187486201-a27bbcde-a25d-4cb5-bc40-d8d15515f5b6.jpg",
+
+                    "https://user-images.githubusercontent.com/88884421/187486207-3a84555e-0d79-4e6b-a47b-f3a6ca460fea.jpg",
+
+                    "https://user-images.githubusercontent.com/88884421/187486212-fe948842-6672-4912-a345-57b6e6e56efd.jpg",
+
+                    "https://user-images.githubusercontent.com/88884421/187486217-39cc7883-d656-4e38-85ba-805f7b7cea33.jpg",
+
+                    "http://127.0.0.1:5500/Project_1/img6.jpghttps://user-images.githubusercontent.com/88884421/187486222-c2f7ce87-6d5c-4b7e-bc58-fa530be1035a.jpg",
+
+                    "https://user-images.githubusercontent.com/88884421/187486231-470a90e3-0b93-473d-a4a5-23ee1043bff8.jpg",
+
+                    "https://user-images.githubusercontent.com/88884421/187486241-1514bae5-a6f9-4639-b3ac-332f7980e950.jpg",
+
+                    "https://user-images.githubusercontent.com/88884421/187486253-8a8b95d5-4242-4ed7-b3b9-113bc9e173a9.jpg",
+                    
+                    "https://user-images.githubusercontent.com/88884421/187486266-1632f203-b9aa-4e34-8d29-2192d1284225.jpg"
+                ];
+
+                var imageIndex = 0;
+
+                $("#previous").on("click", function () {
+                    imageIndex = (imageIndex + images.length - 1) % (images.length);
+                    $("#image").attr('src', images[imageIndex]);
+                });
+
+                $("#next").on("click", function () {
+                    imageIndex = (imageIndex + 1) % (images.length);
+                    $("#image").attr('src', images[imageIndex]);
+                });
+
+                $("#image").attr(images[0]);
+
+            });
+        </script>
+</body>
+
+</html>

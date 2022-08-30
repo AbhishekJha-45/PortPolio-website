@@ -1,0 +1,54 @@
+#imageGallery {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: 10px;
+    /* disabling Text Selection  */
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.image-render {
+    width: 60%;
+}
+
+body {
+    display: flex;
+    background-color: cadetblue;
+}
+
+#next {
+    margin: 0 20px 0 20px;
+    font-size: x-large;
+    font-weight: 700;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#previous {
+    margin: 0 20px 0 20px;
+    font-size: x-large;
+    font-weight: 700;
+    width: 100px;
+    cursor: pointer;
+}
+
+#next:active {
+    font-size: xx-large;
+    color: white;
+}
+
+#previous:active {
+    font-size: xx-large;
+    color: white;
+}
+
+#image{
+    box-shadow: #454545 15px 15px;
+    height: 80%;
+    object-fit: cover;
+}
